@@ -50,11 +50,10 @@
         
         .edu-item { margin-bottom: 15px; }
         .edu-row { display: flex; justify-content: space-between; }
-        .edu-row span { font-style: normal; } /* 이탤릭 제거 */
+        .edu-row span { font-style: normal; }
 
         .code-text { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
         
-        /* 정량적 값 강조 스타일 */
         .stat-highlight {
             background-color: #f3f4f6;
             padding: 1px 4px;
@@ -63,10 +62,32 @@
             color: #1f2937;
         }
 
-        /* 핵심 기술 및 패턴 강조 스타일 (무드 있는 짙은 로즈) */
         .tech-highlight {
             color: #9f1239;
             font-weight: 600;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: right;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* 프린트 최적화 스타일 */
+        @media print {
+            body { margin: 0; padding: 20px; }
+            .stat-highlight, .project-group {
+                background-color: #f3f4f6 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            .tech-highlight {
+                color: #9f1239 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            h2 { color: #0066cc !important; border-bottom: 1px solid #eee !important; }
         }
     </style>
 </head>
@@ -89,12 +110,12 @@
     <section>
         <h2>저는 이렇게 업무를 합니다</h2>
         <ul>
-            <li><strong>통일된 UX와 협업</strong>: 자연스러운 사용자 경험을 위해 적극적으로 소통하고 토의합니다.</li>
-            <li><strong>개발 병목 해결 및 자생적 생태계 구축</strong>: 기획자·백엔드 개발자가 디자인 시스템 라이브러리를 직접 활용해 페이지를 설계·구현할 수 있도록 수준 높은 가이드와 문서화 스킬을 제공함으로써, 프론트엔드 개발 병목을 근본적으로 제거하고 프로덕트 전체의 생산 속도를 가속화했습니다.</li>
-            <li><strong>지속적인 리팩토링</strong>: 불필요한 코드를 덜어내고 공통 기능을 추상화하여 품질을 관리합니다.</li>
+            <li><strong>통일된 UX와 협업</strong>: 사용자 경험 공유를 위해 적극적으로 소통하고 토의합니다.</li>
+            <li><strong>개발 병목 해결 및 자생적 생태계 구축</strong>: 기획자·백엔드 개발자가 디자인 시스템 라이브러리를 직접 활용할 수 있도록 명세 정의 및 활용 가이드를 제공하여, 프론트엔드 개발 의존성을 제거하고 프로덕트 개발 속도를 개선했습니다.</li>
+            <li><strong>지속적인 리팩토링</strong>: 불필요한 코드를 제거하고 공통 기능을 추상화하여 코드 품질을 관리합니다.</li>
             <li><strong>확장성 있는 설계</strong>: 관심사 분리와 모듈화를 통해 유지보수가 용이한 구조를 지향합니다.</li>
-            <li><strong>데이터 기반 성능 개선</strong>: 배포 후에도 성능 지표를 모니터링하며 지속적으로 최적화합니다.</li>
-            <li><strong>반복 업무 자동화</strong>: i18n 관리 툴 제작 등 루틴한 업무를 자동화하여 효율을 높입니다.</li>
+            <li><strong>데이터 기반 성능 개선</strong>: 배포 후에도 성능 지표를 분석하고 최적화를 수행합니다.</li>
+            <li><strong>반복 업무 자동화</strong>: i18n 관리 툴 제작 등 루틴한 업무를 자동화하여 운영 효율을 높입니다.</li>
         </ul>
     </section>
 
@@ -105,8 +126,8 @@
             <li>블록체인 탈중앙 금융(DEFI) 및 게임 플랫폼 서비스의 프론트엔드 개발</li>
             <li>사내 <strong>디자인시스템</strong> 공통 컴포넌트 코어 개발</li>
             <li>크롬 개발자도구를 사용한 렌더링 및 CPU 성능 최적화</li>
-            <li>백엔드, 기획, 디자인, 사업개발 부서 등 다양한 부서와 협업 및 사용자에게 통일되고 친화적인 UX 설계 경험</li>
-            <li>서비스 핵심 모듈에 대한 <strong>단위, 통합 테스트</strong> 작성을 통한 서비스 품질향상에 기여</li>
+            <li>백엔드, 기획, 디자인, 사업개발 부서 등 다양한 부서와 협업 및 사용자 UX 설계</li>
+            <li>서비스 핵심 모듈에 대한 <strong>단위, 통합 테스트</strong> 작성을 통한 서비스 품질 관리</li>
         </ul>
     </section>
 
@@ -126,32 +147,32 @@
         <div class="sub-project">
             <span class="sub-project-title">Enterprise IAM & 통합 리소스 제어 시스템 구축</span>
             <ul>
-                <li><strong>전사 IAM(Identity and Access Management) 보안 매니지먼트 시스템 개발</strong>: 리소스-그룹-사용자 간의 복잡한 권한 체계를 중앙에서 제어하고 관리할 수 있는 보안 인프라 시스템 구축</li>
-                <li><strong>통합 리소스 제어 및 접근 시스템(Access Management) 구현</strong>: 데스크탑 쉘(Shell) 시스템과의 긴밀한 연동을 통해, 어드민 사용자가 단일 인터페이스 내에서 모든 클라우드 자원을 통합 제어하고 접근할 수 있는 환경 제공</li>
+                <li><strong>전사 IAM(Identity and Access Management) 보안 매니지먼트 시스템 개발</strong>: 리소스-그룹-사용자 간의 권한 체계를 중앙에서 제어하고 관리할 수 있는 보안 인프라 시스템 구축</li>
+                <li><strong>통합 리소스 제어 및 접근 시스템(Access Management) 구현</strong>: 데스크탑 쉘(Shell) 시스템과의 연동을 통해, 어드민 사용자가 단일 인터페이스에서 모든 클라우드 자원을 통합 제어할 수 있는 환경 제공</li>
             </ul>
         </div>
 
         <div class="sub-project">
             <span class="sub-project-title">Micro Frontends 기반 데스크탑 쉘(Shell) 시스템 아키텍처</span>
-            <span class="sub-project-desc">"고가용성 윈도우 시스템 및 독립적 런타임 환경 구축"</span>
+            <span class="sub-project-desc">"브라우저를 모킹한 통합 멀티태스킹 워크스페이스 및 독립적 런타임 환경 구축"</span>
             <ul>
-                <li><strong>MFE 기반 가상 브라우저 워크스페이스 구축</strong>: 브라우저 시스템을 모킹(Mocking)하여 Module Federation 기반의 마이크로 프론트 앱들이 가상 프레임 내에서 독립적으로 구동되는 브라우저-인-브라우저 환경 설계</li>
-                <li><strong>프레임별 데이터 격리 및 상태 관리 아키텍처 설계</strong>: 단일 쿼리 프로바이더(Query Provider) 환경 내에서 각 가상 프레임 간의 데이터 간섭을 차단하고 독립적인 런타임 상태를 유지하는 상태 관리 시스템 구축</li>
-                <li><strong>동적 레이아웃 및 쉘 컨트롤 영역 개발</strong>: 사이드바, 컨텐츠 영역, 프레임 컨트롤바 등 복잡한 워크스페이스 레이아웃을 컴포넌트화하여 유연한 앱 런타임 환경 제공</li>
+                <li><strong>MFE 기반 <span class="tech-highlight">가상 브라우저 워크스페이스</span> 구축</strong>: 브라우저 시스템을 모킹하여 Module Federation 기반의 마이크로 프론트 앱들이 가상 프레임 내에서 구동되는 브라우저-인-브라우저 환경 설계</li>
+                <li><strong>프레임별 <span class="tech-highlight">데이터 격리 및 상태 관리</span> 아키텍처 설계</strong>: 단일 쿼리 프로바이더 환경 내에서 각 가상 프레임 간의 데이터 간섭을 차단하고 독립적인 런타임 상태를 유지하는 상태 관리 시스템 구축</li>
+                <li><strong>동적 레이아웃 및 쉘 컨트롤 영역 개발</strong>: 사이드바, 컨텐츠 영역, 프레임 컨트롤바 등 워크스페이스 레이아웃을 컴포넌트화하여 앱 런타임 환경 제공</li>
                 <li><strong>Module Federation</strong>을 활용한 <span class="tech-highlight">Micro Frontends</span> 구조 설계로 서비스별 독립 배포 환경 구축</li>
                 <li>Hierarchical Provider Nesting 구조를 통한 데이터 및 레이어 격리로 특정 서비스의 크래시가 전체 시스템으로 전이되는 것 방지</li>
-                <li><strong>자원 접근 권한 및 서버 응답 기반의 통합 에러/세션 핸들러 설계</strong>: 자원별 부여 권한 및 서버 응답 상태(403, 404, 500 등)에 따라 로그아웃 처리, 접근 제한 UI 표현 등을 가상 프레임 단위에서 제어할 수 있는 공통 런타임 로직 설계</li>
+                <li><strong>자원 접근 권한 및 서버 응답 기반의 <span class="tech-highlight">통합 에러/세션 핸들러</span> 설계</strong>: 자원별 부여 권한 및 서버 응답 상태(403, 404, 500 등)에 따라 로그아웃 처리, 접근 제한 UI 표현 등을 가상 프레임 단위에서 제어할 수 있는 공통 런타임 로직 설계</li>
                 <li><span class="tech-highlight">FSD & Fractal 구조</span> 도입으로 마이크로 앱 확장 시 일관된 디렉토리 규칙 제공</li>
             </ul>
         </div>
 
         <div class="sub-project">
             <span class="sub-project-title">전사 공용 UI 컴포넌트 라이브러리 설계 및 고도화</span>
-            <span class="sub-project-desc">"재사용성과 접근성을 극대화한 <span class="tech-highlight">선언적 인터페이스</span> 구축"</span>
+            <span class="sub-project-desc">"재사용성과 접근성을 고려한 <span class="tech-highlight">선언적 인터페이스</span> 구축"</span>
             <ul>
                 <li><span class="tech-highlight">Compound Component Pattern</span> 도입으로 Dropdown, Select 등 복잡한 UI의 API 선언성을 강화하여 코드 재사용성 <span class="stat-highlight">40%</span> 향상</li>
                 <li><span class="tech-highlight">Portal 아키텍처</span> 설계로 Modal, Dropdown, Context-Menu 등 중첩 레이아웃 환경에서의 UI 간섭 제거 및 안정적 <span class="tech-highlight">Overlay 시스템</span> 구축</li>
-                <li>Controlled/Uncontrolled 하이브리드 패턴 적용으로 <strong>React Hook Form</strong> 등 다양한 외부 라이브러리와의 유연한 연동 인터페이스 제공</li>
+                <li>Controlled/Uncontrolled 하이브리드 패턴 적용으로 <strong>React Hook Form</strong> 등 외부 라이브러리와의 유연한 연동 인터페이스 제공</li>
                 <li>WAI-ARIA 표준 준수 및 키보드 네비게이션 구현으로 웹 접근성 품질 확보</li>
             </ul>
         </div>
@@ -168,7 +189,7 @@
         <div class="sub-project">
             <span class="sub-project-title">대규모 모노레포 전용 DX 및 품질 통제 시스템 구축</span>
             <ul>
-                <li><strong>고속 빌드 파이프라인 및 실시간 피드백 환경 구축</strong>: <strong>Rspack</strong> 기반의 빌드 환경을 설계하고 빌드 타임 내 정적 분석 도구를 도입하여, 대규모 모노레포 환경에서도 실시간으로 오류를 탐지할 수 있는 고속 피드백 루프 구현</li>
+                <li><strong>빌드 타임 내 실시간 피드백 및 정적 분석 환경 구축</strong>: <strong>Rspack</strong> 기반의 빌드 환경을 설계하고 정적 분석 도구를 도입하여, 대규모 모노레포 환경에서도 개발 단계에서 오류를 실시간으로 탐지할 수 있는 피드백 루프 구현</li>
                 <li><strong>의존성 안정성 및 코드 품질 강제화</strong>: 린트(Lint) 규칙을 통한 순환 참조(Circular Dependency) 차단을 엄격하게 적용하여 프로젝트의 구조적 안정성 확보</li>
                 <li><strong>기술 표준화 및 유지보수 효율성 제고</strong>: 사내 <span class="tech-highlight">TanStack Query</span> 사용 패턴을 규격화하고 문서화하여 팀 전체의 코드 일관성 및 유지보수성 향상</li>
             </ul>
@@ -248,6 +269,10 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        Last Updated: 2025.02.24
+    </footer>
 
 </body>
 </html>
