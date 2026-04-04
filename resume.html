@@ -124,13 +124,10 @@
         <div class="project-group">🏢 ThakiCloud (2025.06 ~ )</div>
 
         <div class="sub-project">
-            <span class="sub-project-title">전사 공용 UI 컴포넌트 라이브러리 설계 및 고도화</span>
-            <span class="sub-project-desc">"재사용성과 접근성을 극대화한 선언적 인터페이스 구축"</span>
+            <span class="sub-project-title">Enterprise IAM & 통합 리소스 제어 시스템 구축</span>
             <ul>
-                <li><strong>Compound Component Pattern</strong> 도입으로 Dropdown, Select 등 복잡한 UI의 API 선언성을 강화하여 코드 재사용성 <span class="stat-highlight">40%</span> 향상</li>
-                <li><strong>Portal 아키텍처</strong> 설계로 Modal, Sticky Table 등 중첩 레이아웃 환경에서의 UI 간섭 제거 및 안정적 Overlay 시스템 구축</li>
-                <li>Controlled/Uncontrolled 하이브리드 패턴 적용으로 <strong>React Hook Form</strong> 등 외부 라이브러리와의 유연한 연동 인터페이스 제공</li>
-                <li>WAI-ARIA 표준 준수 및 키보드 네비게이션 구현으로 웹 접근성 품질 확보</li>
+                <li><strong>전사 IAM(Identity and Access Management) 보안 매니지먼트 시스템 개발</strong>: 리소스-그룹-사용자 간의 복잡한 권한 체계를 중앙에서 제어하고 관리할 수 있는 보안 인프라 시스템 구축</li>
+                <li><strong>통합 리소스 제어 및 접근 시스템(Access Management) 구현</strong>: 데스크탑 쉘(Shell) 시스템과의 긴밀한 연동을 통해, 어드민 사용자가 단일 인터페이스 내에서 모든 클라우드 자원을 통합 제어하고 접근할 수 있는 환경 제공</li>
             </ul>
         </div>
 
@@ -138,10 +135,24 @@
             <span class="sub-project-title">Micro Frontends 기반 데스크탑 쉘(Shell) 시스템 아키텍처</span>
             <span class="sub-project-desc">"고가용성 윈도우 시스템 및 독립적 런타임 환경 구축"</span>
             <ul>
+                <li><strong>MFE 기반 가상 브라우저 워크스페이스 구축</strong>: 브라우저 시스템을 모킹(Mocking)하여 Module Federation 기반의 마이크로 프론트 앱들이 가상 프레임 내에서 독립적으로 구동되는 브라우저-인-브라우저 환경 설계</li>
+                <li><strong>프레임별 데이터 격리 및 상태 관리 아키텍처 설계</strong>: 단일 쿼리 프로바이더(Query Provider) 환경 내에서 각 가상 프레임 간의 데이터 간섭을 차단하고 독립적인 런타임 상태를 유지하는 상태 관리 시스템 구축</li>
+                <li><strong>동적 레이아웃 및 쉘 컨트롤 영역 개발</strong>: 사이드바, 컨텐츠 영역, 프레임 컨트롤바 등 복잡한 워크스페이스 레이아웃을 컴포넌트화하여 유연한 앱 런타임 환경 제공</li>
                 <li><strong>Module Federation</strong>을 활용한 <span class="tech-highlight">Micro Frontends</span> 구조 설계로 서비스별 독립 배포 환경 구축</li>
                 <li>Hierarchical Provider Nesting 구조를 통한 데이터 및 레이어 격리로 특정 서비스의 크래시가 전체 시스템으로 전이되는 것 방지</li>
-                <li>Virtual Tab Routing System 자체 구현: 브라우저 URL 제약을 넘어선 다중 워크플로우 처리 실현</li>
+                <li><strong>자원 접근 권한 및 서버 응답 기반의 통합 에러/세션 핸들링 설계</strong>: 자원별 부여 권한 및 서버 응답 상태(403, 404, 500 등)에 따라 로그아웃 처리, 접근 제한 UI 표현 등을 가상 프레임 단위에서 제어할 수 있는 공통 런타임 로직 설계</li>
                 <li><span class="tech-highlight">FSD & Fractal 구조</span> 도입으로 마이크로 앱 확장 시 일관된 디렉토리 규칙 제공</li>
+            </ul>
+        </div>
+
+        <div class="sub-project">
+            <span class="sub-project-title">전사 공용 UI 컴포넌트 라이브러리 설계 및 고도화</span>
+            <span class="sub-project-desc">"재사용성과 접근성을 극대화한 <span class="tech-highlight">선언적 인터페이스</span> 구축"</span>
+            <ul>
+                <li><span class="tech-highlight">Compound Component Pattern</span> 도입으로 Dropdown, Select 등 복잡한 UI의 API 선언성을 강화하여 코드 재사용성 <span class="stat-highlight">40%</span> 향상</li>
+                <li><span class="tech-highlight">Portal 아키텍처</span> 설계로 Modal, Sticky Table 등 중첩 레이아웃 환경에서의 UI 간섭 제거 및 안정적 <span class="tech-highlight">Overlay 시스템</span> 구축</li>
+                <li>Controlled/Uncontrolled 하이브리드 패턴 적용으로 <strong>React Hook Form</strong> 등 외부 라이브러리와의 유연한 연동 인터페이스 제공</li>
+                <li>WAI-ARIA 표준 준수 및 키보드 네비게이션 구현으로 웹 접근성 품질 확보</li>
             </ul>
         </div>
 
@@ -164,11 +175,11 @@
         </div>
 
         <div class="sub-project">
-            <span class="sub-project-title">Private Cloud 플랫폼 프론트엔드 구조 설계 및 MVP 개발</span>
+            <span class="sub-project-title">대규모 모노레포 전용 DX 및 품질 통제 시스템 구축</span>
             <ul>
-                <li>도메인 특성을 반영한 <span class="tech-highlight">FSD-DDD</span> 혼합 아키텍처 제안 및 데이터 흐름 표준화</li>
-                <li>핵심 라이브러리 도입: 사내 <span class="tech-highlight">TanStack Query</span>를 도입하고 사용 예시를 문서화해 쿼리 사용 패턴 규격화</li>
-                <li>빌드 시스템 최적화: <strong>Rspack</strong> 기반 실시간 타입 에러 확인 및 순환 참조 차단 설정으로 안정성 강화</li>
+                <li><strong>고속 빌드 시스템 및 실시간 피드백 환경 구축</strong>: <strong>Rspack</strong> 기반의 빌드 환경을 설계하고 <span class="code-text">ts-checker-rspack-plugin</span>을 도입하여, 대규모 모노레포 환경에서도 실시간으로 타입 에러를 탐지할 수 있는 고속 피드백 루프 구현</li>
+                <li><strong>의존성 안정성 및 코드 품질 강제화</strong>: <span class="code-text">no-cycle</span> 린트(Lint) 규칙을 엄격하게 적용하여 서비스 간 복잡한 순환 참조를 원천 차단하고 프로젝트의 구조적 안정성 확보</li>
+                <li><strong>기술 표준화 및 유지보수 효율성 제고</strong>: 사내 <span class="tech-highlight">TanStack Query</span> 사용 패턴을 규격화하고 문서화하여 팀 전체의 코드 일관성 및 유지보수성 향상</li>
             </ul>
         </div>
 
