@@ -1,0 +1,11 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "정도영 FE 개발자 이력서",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jdy8739",
+  "license": "MIT"
+}
