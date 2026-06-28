@@ -1,290 +1,626 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>정도영 FE 개발자 이력서</title>
     <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 40px;
+        background-color: #fff;
+      }
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #000;
+      }
+      .contact {
+        margin-bottom: 30px;
+      }
+      .contact p {
+        margin: 5px 0;
+      }
+      .intro {
+        margin-bottom: 40px;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-size: 20px;
+        color: #0066cc;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+
+      .project-group {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .sub-project {
+        margin-bottom: 30px;
+        margin-left: 10px;
+      }
+      .sub-project-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .sub-project-desc {
+        font-style: italic;
+        color: #666;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .indent-ul {
+        list-style-type: circle;
+        margin-left: 20px;
+      }
+
+      .tech-item {
+        margin-bottom: 10px;
+      }
+      .tech-label {
+        font-weight: bold;
+        display: inline-block;
+        width: 150px;
+      }
+
+      .edu-item {
+        margin-bottom: 15px;
+      }
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .edu-row span {
+        font-style: normal;
+      }
+
+      .code-text {
+        background-color: #f0f0f0;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+
+      .stat-highlight {
+        background-color: #f3f4f6;
+        padding: 1px 4px;
+        border-radius: 4px;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .tech-highlight {
+        color: #9f1239;
+        font-weight: 600;
+      }
+
+      footer {
+        margin-top: 80px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        text-align: right;
+        color: #999;
+        font-size: 12px;
+      }
+
+      /* 프린트 최적화 스타일 */
+      @media print {
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 40px;
-            background-color: #fff;
+          margin: 0;
+          padding: 20px;
         }
-        h1 { font-size: 32px; margin-bottom: 20px; color: #000; }
-        .contact { margin-bottom: 30px; }
-        .contact p { margin: 5px 0; }
-        .intro { margin-bottom: 40px; }
-        
-        section { margin-bottom: 40px; }
-        h2 { 
-            font-size: 20px; 
-            color: #0066cc; 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 5px; 
-            margin-bottom: 20px; 
+        .stat-highlight,
+        .project-group {
+          background-color: #f3f4f6 !important;
+          -webkit-print-color-adjust: exact;
         }
-        
-        ul { list-style-type: disc; padding-left: 20px; margin-bottom: 20px; }
-        li { margin-bottom: 8px; }
-        
-        .project-group { 
-            background-color: #f5f5f5; 
-            padding: 15px; 
-            border-radius: 5px; 
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-        
-        .sub-project { margin-bottom: 30px; margin-left: 10px; }
-        .sub-project-title { font-weight: bold; font-size: 16px; margin-bottom: 10px; display: block; }
-        .sub-project-desc { font-style: italic; color: #666; display: block; margin-bottom: 10px; }
-        
-        .indent-ul { list-style-type: circle; margin-left: 20px; }
-        
-        .tech-item { margin-bottom: 10px; }
-        .tech-label { font-weight: bold; display: inline-block; width: 150px; }
-        
-        .edu-item { margin-bottom: 15px; }
-        .edu-row { display: flex; justify-content: space-between; }
-        .edu-row span { font-style: normal; }
-
-        .code-text { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
-        
-        .stat-highlight {
-            background-color: #f3f4f6;
-            padding: 1px 4px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #1f2937;
-        }
-
         .tech-highlight {
-            color: #9f1239;
-            font-weight: 600;
+          color: #9f1239 !important;
+          -webkit-print-color-adjust: exact;
         }
-
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: right;
-            color: #999;
-            font-size: 12px;
+        h2 {
+          color: #0066cc !important;
+          border-bottom: 1px solid #eee !important;
         }
-
-        /* 프린트 최적화 스타일 */
-        @media print {
-            body { margin: 0; padding: 20px; }
-            .stat-highlight, .project-group {
-                background-color: #f3f4f6 !important;
-                -webkit-print-color-adjust: exact;
-            }
-            .tech-highlight {
-                color: #9f1239 !important;
-                -webkit-print-color-adjust: exact;
-            }
-            h2 { color: #0066cc !important; border-bottom: 1px solid #eee !important; }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>정도영 FE 개발자 이력서</h1>
-    
+
     <div class="contact">
-        <p>정도영</p>
-        <p>jdy8739@naver.com | 010-8739-2582</p>
-        <p>
-            <a href="https://github.com/jdy8739" target="_blank">Github</a> | 
-            <a href="https://logdo.netlify.app" target="_blank">Blog</a>
-        </p>
+      <p>정도영</p>
+      <p>jdy8739@naver.com | 010-8739-2582</p>
+      <p>
+        <a href="https://github.com/jdy8739" target="_blank">Github</a> |
+        <a href="https://logdo.netlify.app" target="_blank">Blog</a>
+      </p>
     </div>
 
     <div class="intro">
-        <p>안녕하세요. <strong>확장 가능한 아키텍처와 DX 인프라를 설계하는 프론트엔드 엔지니어</strong> 정도영입니다.</p>
-        <p>4년차 프론트엔드 개발자로 블록체인 게임 플랫폼인 <strong>위믹스플레이</strong>를 개발했습니다.</p>
-        <p>현재는 <strong>Private Cloud 플랫폼에서 브라우저 모킹(Mocking) 시스템 및 IAM 보안 관리 시스템</strong>을 개발하고 있습니다.</p>
+      <p>
+        안녕하세요.
+        <strong
+          >확장 가능한 아키텍처와 DX 인프라를 설계하는 프론트엔드
+          엔지니어</strong
+        >
+        정도영입니다.
+      </p>
+      <p>
+        4년차 프론트엔드 개발자로 블록체인 게임 플랫폼인
+        <strong>위믹스플레이</strong>를 개발했습니다.
+      </p>
+      <p>
+        현재는 <strong>Private Cloud OS 플랫폼</strong>에서
+        <strong>Module Federation 기반 데스크탑 Shell 시스템</strong>과
+        <strong>IAM 보안 관리 시스템</strong>을 개발하며, Shell과 Remote 앱 간
+        정합성을 보장하는 OS like 프론트엔드 인프라를 설계하고 있습니다.
+      </p>
     </div>
 
     <section>
-        <h2>경력</h2>
+      <h2>경력</h2>
+      <ul>
+        <li>ThakiCloud 클라우드 개발팀 2025.06 ~</li>
+        <li>위메이드 위믹스플레이 프론트엔드 개발팀 2023.02 - 2025.06</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>저는 이렇게 업무를 합니다</h2>
+      <ul>
+        <li>
+          <strong>통일된 UX와 협업</strong>: 사용자 경험 공유를 위해 적극적으로
+          소통하고 토의합니다.
+        </li>
+        <li>
+          <strong>개발 병목 해결 및 자생적 생태계 구축</strong>: 기획자·백엔드
+          개발자가 디자인 시스템 라이브러리를 직접 활용할 수 있도록 명세 정의 및
+          활용 가이드를 제공하여, 프론트엔드 개발 의존성을 제거하고 프로덕트
+          개발 속도를 개선했습니다.
+        </li>
+        <li>
+          <strong>지속적인 리팩토링</strong>: 불필요한 코드를 제거하고 공통
+          기능을 추상화하여 코드 품질을 관리합니다.
+        </li>
+        <li>
+          <strong>확장성 있는 설계</strong>: 관심사 분리와 모듈화를 통해
+          유지보수가 용이한 구조를 지향합니다.
+        </li>
+        <li>
+          <strong>데이터 기반 성능 개선</strong>: 배포 후에도 성능 지표를
+          분석하고 최적화를 수행합니다.
+        </li>
+        <li>
+          <strong>반복 업무 자동화</strong>: 다국어 파일 관리 툴 제작 등 루틴한
+          업무를 자동화하여 운영 효율을 높입니다.
+        </li>
+        <li>
+          <strong>풀스택 대응</strong>: 긴급하거나 단순한 API는
+          <strong>백엔드 API를</strong>직접 개발하여 백엔드 병목을 해소할 수
+          있습니다.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>업무 경험</h2>
+      <ul>
+        <li>프라이빗 클라우드 서비스 프론트엔드 코어 개발</li>
+        <li>
+          블록체인 탈중앙 금융(DEFI) 및 게임 플랫폼 서비스의 프론트엔드 개발
+        </li>
+        <li>사내 <strong>디자인시스템</strong> 공통 컴포넌트 코어 개발</li>
+        <li>크롬 개발자도구를 사용한 렌더링 및 CPU 성능 최적화</li>
+        <li>
+          백엔드, 기획, 디자인, 사업개발 부서 등 다양한 부서와 협업 및 사용자 UX
+          설계
+        </li>
+        <li>
+          서비스 핵심 모듈에 대한 <strong>단위, 통합 테스트</strong> 작성을 통한
+          서비스 품질 관리
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>프로젝트</h2>
+
+      <div class="project-group">🏢 ThakiCloud (2025.06 ~ )</div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          ><span class="tech-highlight">Shell-Remote 간 설정 정합성</span>
+          동기화</span
+        >
         <ul>
-            <li>ThakiCloud 클라우드 개발팀 2025.06 ~</li>
-            <li>위메이드 위믹스플레이 프론트엔드 개발팀 2023.02 - 2025.06</li>
+          <li>
+            Module Federation으로 분리된 Shell과 Remote 앱 간
+            <strong
+              >언어·테마·시간대·알림 설정이 어느 경로로 변경되든 단일
+              참조원(SSOT)으로 수렴</strong
+            >되도록 설계하여, 앱 전반에 걸쳐 단절 없는 일관된 UX 보장
+          </li>
+          <li>
+            <strong>CustomEvent + useSyncExternalStore</strong> 기반 실시간
+            동기화 파이프라인으로 Shell↔Remote 즉시 반응. Optimistic Update +
+            서버 확정 후 SSOT 갱신으로 미확정 값 오염 방지
+          </li>
         </ul>
-    </section>
+      </div>
 
-    <section>
-        <h2>저는 이렇게 업무를 합니다</h2>
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >SSE 기반 실시간 알림 센터 및 긴급 대응 UX 구축</span
+        >
         <ul>
-            <li><strong>통일된 UX와 협업</strong>: 사용자 경험 공유를 위해 적극적으로 소통하고 토의합니다.</li>
-            <li><strong>개발 병목 해결 및 자생적 생태계 구축</strong>: 기획자·백엔드 개발자가 디자인 시스템 라이브러리를 직접 활용할 수 있도록 명세 정의 및 활용 가이드를 제공하여, 프론트엔드 개발 의존성을 제거하고 프로덕트 개발 속도를 개선했습니다.</li>
-            <li><strong>지속적인 리팩토링</strong>: 불필요한 코드를 제거하고 공통 기능을 추상화하여 코드 품질을 관리합니다.</li>
-            <li><strong>확장성 있는 설계</strong>: 관심사 분리와 모듈화를 통해 유지보수가 용이한 구조를 지향합니다.</li>
-            <li><strong>데이터 기반 성능 개선</strong>: 배포 후에도 성능 지표를 분석하고 최적화를 수행합니다.</li>
-            <li><strong>반복 업무 자동화</strong>: i18n 관리 툴 제작 등 루틴한 업무를 자동화하여 운영 효율을 높입니다.</li>
+          <li>
+            <strong>SSE 기반 실시간 알림 센터 구축</strong>: 장애·시스템 이벤트
+            발생 즉시 토스트 팝업과 <strong>중요도별 사운드</strong>로
+            운영자에게 전달. 전체/미확인 탭, 앱별 필터, 개별·일괄 읽음 처리 등
+            <span class="tech-highlight">OS 수준의 알림 관리 UX</span> 구현
+          </li>
+          <li>
+            연결이 불안정한 환경에서도
+            <strong>끊김 없이 알림 흐름을 유지</strong>하도록 자동 재연결 및
+            이벤트 연속성을 보장. <strong>연결 상태 UI</strong>를 함께 설계하여
+            운영자가 현재 알림 수신 상태를 항상 인지하고 대응 가능
+          </li>
+          <li>
+            비동기 피드백을 <strong>SSE 스낵바</strong>와
+            <strong>Mutation 생명주기 기반 토스트</strong>로 이원화하고, 서버
+            에러 메시지를 캐시 레이어에서 자동 주입해 토스트 문구 완성.
+            <strong>포커스된 프레임</strong>에만 토스트를 노출시켜 멀티태스킹
+            환경에서도 맥락을 흐트리지 않는 피드백 설계
+          </li>
         </ul>
-    </section>
+      </div>
 
-    <section>
-        <h2>업무 경험</h2>
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >Enterprise IAM & 통합 리소스 제어 시스템 구축</span
+        >
         <ul>
-            <li>프라이빗 클라우드 서비스 프론트엔드 코어 개발</li>
-            <li>블록체인 탈중앙 금융(DEFI) 및 게임 플랫폼 서비스의 프론트엔드 개발</li>
-            <li>사내 <strong>디자인시스템</strong> 공통 컴포넌트 코어 개발</li>
-            <li>크롬 개발자도구를 사용한 렌더링 및 CPU 성능 최적화</li>
-            <li>백엔드, 기획, 디자인, 사업개발 부서 등 다양한 부서와 협업 및 사용자 UX 설계</li>
-            <li>서비스 핵심 모듈에 대한 <strong>단위, 통합 테스트</strong> 작성을 통한 서비스 품질 관리</li>
+          <li>
+            <strong
+              >전사 IAM(Identity and Access Management) 보안 매니지먼트 시스템
+              개발</strong
+            >: 리소스-그룹-사용자 간의 권한 체계를 중앙에서 제어하고 관리할 수
+            있는 보안 인프라 시스템 구축
+          </li>
+          <li>
+            <strong
+              >통합 리소스 제어 및 접근 시스템(Access Management) 구현</strong
+            >: 데스크탑 쉘(Shell) 시스템과의 연동을 통해, 어드민 사용자가 단일
+            인터페이스에서 모든 클라우드 자원을 통합 제어할 수 있는 환경 제공
+          </li>
         </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >Micro Frontends 기반 데스크탑 쉘(Shell) 시스템 아키텍처</span
+        >
+        <span class="sub-project-desc"
+          >"브라우저를 모킹한 통합 멀티태스킹 워크스페이스 및 독립적 런타임 환경
+          구축"</span
+        >
+        <ul>
+          <li>
+            <strong>브라우저 모킹 환경의 키보드 접근성(A11y) 최적화</strong>:
+            가상 탭-데스크탑-브라우저 간 포커스 이동을 제어하는 오케스트레이션
+            시스템 및 시각화 로직을 구축하여 키보드 전용 조작 환경 구현
+          </li>
+          <li>
+            <strong
+              >MFE 기반
+              <span class="tech-highlight">가상 브라우저 워크스페이스</span>
+              구축</strong
+            >: 브라우저 시스템을 모킹하여
+            <span class="tech-highlight">Module Federation</span> 기반의
+            마이크로 프론트 앱들이 가상 프레임 내에서 구동되는
+            브라우저-인-브라우저 환경 설계
+          </li>
+          <li>
+            <strong>프레임별 데이터 격리 및 상태 관리 아키텍처 설계</strong>:
+            단일 쿼리 프로바이더 환경 내에서 각 가상 프레임 간의 데이터 간섭을
+            차단하고 독립적인 런타임 상태를 유지하는 상태 관리 시스템 구축
+          </li>
+          <li>
+            <strong>AuthGuard 기반 접근 제어</strong>: 페이지 및 Remote 앱
+            단위로 AuthGuard Provider를 래핑하여, 권한에 따라 접근 가능한 화면과
+            애플리케이션을 동적으로 제어하는 보안 레이어 설계
+          </li>
+          <li>
+            <strong>Module Federation</strong>을 활용한 Micro Frontends 구조
+            설계로 서비스별 독립 배포 환경 구축
+          </li>
+          <li>
+            <strong
+              >자원 접근 권한 및 서버 응답 기반의 통합 에러/세션 핸들러
+              설계</strong
+            >: 자원별 부여 권한 및 서버 응답 상태(403, 404, 500 등)에 따라
+            로그아웃 처리, 접근 제한 UI 표현 등을 가상 프레임 단위에서 제어할 수
+            있는 공통 런타임 로직 설계
+          </li>
+          <li>
+            <strong>FSD & Fractal</strong> 구조 도입으로 마이크로 앱 확장 시
+            일관된 디렉토리 규칙 제공
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >전사 공용 UI 컴포넌트 라이브러리 설계 및 고도화</span
+        >
+        <span class="sub-project-desc"
+          >"재사용성과 접근성을 고려한
+          <span class="tech-highlight">선언적 인터페이스</span> 구축"</span
+        >
+        <ul>
+          <li>
+            <strong
+              >복잡한 중첩 레이아웃을 위한 웹 접근성(A11y) 아키텍처 설계</strong
+            >: `inert` 속성과 Focus Trap 기반의 전역 포커스 제어 시스템을
+            구축하여 중첩 오버레이 환경의 포커스 오염 차단 및 스크린 리더 호환성
+            고도화
+          </li>
+          <li>
+            <span class="tech-highlight">Compound Component Pattern</span>
+            도입으로 Dropdown, Select 등 복잡한 UI의 API 선언성을 강화하여
+            <strong>유연한 컴포넌트 조합 및 인터페이스 확장성 확보</strong>
+          </li>
+          <li>
+            <strong>Portal 아키텍처 설계</strong>로 Modal, Dropdown,
+            Context-Menu 등 중첩 레이아웃 환경에서의 UI 간섭 제거 및 안정적
+            Overlay 시스템 구축
+          </li>
+          <li>
+            Controlled/Uncontrolled 하이브리드 패턴 적용으로
+            <strong>React Hook Form</strong> 등 다양한 외부 라이브러리와의
+            유연한 연동 인터페이스 제공
+          </li>
+          <li>
+            WAI-ARIA 표준 준수 및 키보드 네비게이션 구현으로 웹 접근성 품질 확보
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >범용 Table 설계 및 복잡한 Step-Form의 선언적 추상화</span
+        >
+        <ul>
+          <li>
+            <strong>Table Refactoring 및 로우레벨 DOM 제어 최적화</strong>: 기존
+            설정 기반 구조를 Render Prop 패턴으로 전환하여 커스텀 셀 요구사항에
+            대응하고, 커스텀 훅을 통한 컬럼 조절 기능 구현으로 컬럼 조절 시
+            발생하는 Reflow 비용 최소화
+          </li>
+          <li>
+            <strong>Advanced Generics를 통한 타입 안전성 확보</strong>: 복잡한
+            테이블 데이터 및 컬럼 정의 시 엄격한 타입 안전성을 보장하고, 자동
+            추론 환경을 구축하여 개발 단계의 오류 방지 및 유지보수 편의성 제고
+          </li>
+          <li>
+            <strong>선언적 상태 제어 기반의 Step-Form 아키텍처 설계</strong>:
+            명령형 단계 제어 로직을 선언적 인터페이스로 추상화하여, 비즈니스
+            로직의 응집도를 높이고 복잡한 단계 전환 로직에 대한 유지보수성 및
+            확장성 확보
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >대규모 모노레포 전용 DX 및 품질 통제 시스템 구축</span
+        >
+        <ul>
+          <li>
+            <strong>빌드 타임 내 실시간 피드백 및 정적 분석 환경 구축</strong>:
+            <strong>Rspack</strong> 기반의 빌드 환경을 설계하고 정적 분석 도구를
+            도입하여, 대규모 모노레포 환경에서도 실시간으로 오류를 탐지할 수
+            있는 고속 피드백 루프 구현
+          </li>
+          <li>
+            <strong>의존성 안정성 및 코드 품질 강제화</strong>: 린트(Lint)
+            규칙을 통한 순환 참조(Circular Dependency) 차단을
+            <strong>자동화된 검사 시스템으로 구축</strong>하여 프로젝트의 구조적
+            안정성 확보
+          </li>
+          <li>
+            <strong>기술 표준화 및 유지보수 효율성 제고</strong>: 사내
+            <span class="tech-highlight">TanStack Query</span> 사용 패턴을
+            규격화하고 문서화하여 팀 전체의 코드 일관성 및 유지보수성 향상
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-group">
+        🎮 WEMADE / WEMIX PLAY (2023.02 ~ 2025.06)
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >Global Game Token Economy & Cross-Chain DeFi 구축</span
+        >
+        <ul>
+          <li>
+            <strong>DEX 및 유동성 공급 서비스 개발</strong>: 수십 종의 게임 토큰
+            간 스왑(Swap) 및 유동성 풀(Pool) 공급 시스템 프론트엔드 아키텍처
+            설계
+          </li>
+          <li>
+            <strong>환전 및 환율 변동 처리 로직 고도화</strong>: 복잡한 환전
+            시스템과 환율 변동 처리 코드를 관심사 분리(SoC) 기반으로
+            리팩토링하고 핵심 로직에 대한 단위 테스트를 작성하여 금융 데이터
+            처리의 안정성 강화
+          </li>
+          <li>
+            <strong>크로스체인 브릿지(Bridge) 및 자산 이동 제어</strong>: 서로
+            다른 블록체인 네트워크 간의 자산 전송 지원 및
+            <span class="tech-highlight">데이터 정합성 검증</span>
+          </li>
+          <li>
+            <strong>다양한 토큰 생태계 확장</strong>: 팬토큰, 밈토큰 등 도메인별
+            특성에 맞는 토큰 서비스 기획 및 실시간 전송 정합성 확보
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title">테스트/자동화 기반 안정성 강화</span>
+        <ul>
+          <li>
+            <strong>Vitest</strong> 및 <strong>MSW</strong> 도입으로 테스트
+            커버리지 확대 및 API 모킹 기반 시나리오 안정성 검증
+          </li>
+          <li>
+            Lefthook 기반 Git 이벤트 자동화로 변경 영향 파일 수정 시 테스트 자동
+            실행
+          </li>
+          <li>
+            Node.js 기반
+            <span class="tech-highlight">i18n 자동화 툴</span> 개발로 수동 관리
+            프로세스 제거 및 휴먼 에러 방지
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >DEFI 프론트엔드 성능 최적화 & UX 일관성 개선</span
+        >
+        <ul>
+          <li>
+            <strong>Font Subset 추출 및 Woff2 포맷 변환</strong>을 통한 초기
+            로딩 리소스 최적화
+          </li>
+          <li>
+            <strong>Core Web Vitals 지표 개선</strong>을 통한 사용자 체감 성능
+            및 검색 엔진 최적화
+          </li>
+          <li>
+            에러 처리 표준화: ErrorBoundary +
+            <span class="tech-highlight">TanStack Query</span> 연동 기반 전역
+            에러 처리 UX 표준화
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >상태 관리 정교화 및 도메인 로직 리팩토링</span
+        >
+        <ul>
+          <li>
+            데이터 가공 프로세스 함수형 전환 및 SRP 기반 함수 분리로 테스트 가능
+            구조 정립
+          </li>
+          <li>
+            토큰 교환비/가격 변동 계산 로직 유틸 모듈화로 재사용성/검증 비용
+            절감
+          </li>
+          <li>
+            <strong
+              >사이드 이펙트 생명주기 최적화 및 상태 파생 로직 단일화</strong
+            >: 복잡하게 얽힌 부수 효과 의존성을 정리하고 파생 값 계산 로직을
+            최적화하여 불필요한 렌더링을 최소화하고 상태 예측 가능성 증대
+          </li>
+          <li>
+            <strong>네트워크 리소스 최적화</strong>를 위한 API 폴링 및 캐싱 전략
+            수립으로 불필요한 중복 호출 제거
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <span class="sub-project-title"
+          >디자인 시스템 아톰/헤드리스 컴포넌트 개발</span
+        >
+        <ul>
+          <li>
+            <strong>Storybook</strong> 기반 공용 아톰 컴포넌트 설계 및 고도화
+          </li>
+          <li>
+            OCP 기반 확장 구조 +
+            <strong><span class="tech-highlight">Headless 설계</span></strong
+            >로 다양한 스타일/UX 대응력 확보
+          </li>
+          <li>
+            커스텀 이미지 컴포넌트 설계(Lazy Loading) 및 컴포넌트 문서화 표준
+            정립으로 개발 생산성 향상
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section>
-        <h2>프로젝트</h2>
-        
-        <div class="project-group">🏢 ThakiCloud (2025.06 ~ )</div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">SSE 기반 실시간 알림 센터 및 긴급 대응 UX 구축</span>
-            <ul>
-                <li><strong>SSE(Server-Sent Events) 스트림 기반 실시간 알림 인프라 설계</strong>: 긴급 장애 및 주요 시스템 이슈에 대한 즉각적인 알림과 실시간 UI 피드백을 구현하여 장애 대응 UX 고도화</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">Enterprise IAM & 통합 리소스 제어 시스템 구축</span>
-            <ul>
-                <li><strong>전사 IAM(Identity and Access Management) 보안 매니지먼트 시스템 개발</strong>: 리소스-그룹-사용자 간의 권한 체계를 중앙에서 제어하고 관리할 수 있는 보안 인프라 시스템 구축</li>
-                <li><strong>통합 리소스 제어 및 접근 시스템(Access Management) 구현</strong>: 데스크탑 쉘(Shell) 시스템과의 연동을 통해, 어드민 사용자가 단일 인터페이스에서 모든 클라우드 자원을 통합 제어할 수 있는 환경 제공</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">Micro Frontends 기반 데스크탑 쉘(Shell) 시스템 아키텍처</span>
-            <span class="sub-project-desc">"브라우저를 모킹한 통합 멀티태스킹 워크스페이스 및 독립적 런타임 환경 구축"</span>
-            <ul>
-                <li><strong>브라우저 모킹 환경의 키보드 접근성(A11y) 최적화</strong>: 가상 탭-데스크탑-브라우저 간 포커스 이동을 제어하는 오케스트레이션 시스템 및 시각화 로직을 구축하여 키보드 전용 조작 환경 구현</li>
-                <li><strong>MFE 기반 <span class="tech-highlight">가상 브라우저 워크스페이스</span> 구축</strong>: 브라우저 시스템을 모킹하여 <span class="tech-highlight">Module Federation</span> 기반의 마이크로 프론트 앱들이 가상 프레임 내에서 구동되는 브라우저-인-브라우저 환경 설계</li>
-                <li><strong>프레임별 데이터 격리 및 상태 관리 아키텍처 설계</strong>: 단일 쿼리 프로바이더 환경 내에서 각 가상 프레임 간의 데이터 간섭을 차단하고 독립적인 런타임 상태를 유지하는 상태 관리 시스템 구축</li>
-                <li><strong>동적 레이아웃 및 쉘 컨트롤 영역 개발</strong>: 사이드바, 컨텐츠 영역, 프레임 컨트롤바 등 워크스페이스 레이아웃을 컴포넌트화하여 앱 런타임 환경 제공</li>
-                <li><strong>Module Federation</strong>을 활용한 Micro Frontends 구조 설계로 서비스별 독립 배포 환경 구축</li>
-                <li>Hierarchical Provider Nesting 구조를 통한 데이터 및 레이어 격리로 특정 서비스의 크래시가 전체 시스템으로 전이되는 것 방지</li>
-                <li><strong>자원 접근 권한 및 서버 응답 기반의 통합 에러/세션 핸들러 설계</strong>: 자원별 부여 권한 및 서버 응답 상태(403, 404, 500 등)에 따라 로그아웃 처리, 접근 제한 UI 표현 등을 가상 프레임 단위에서 제어할 수 있는 공통 런타임 로직 설계</li>
-                <li>FSD & Fractal 구조 도입으로 마이크로 앱 확장 시 일관된 디렉토리 규칙 제공</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">전사 공용 UI 컴포넌트 라이브러리 설계 및 고도화</span>
-            <span class="sub-project-desc">"재사용성과 접근성을 고려한 <span class="tech-highlight">선언적 인터페이스</span> 구축"</span>
-            <ul>
-                <li><strong>복잡한 중첩 레이아웃을 위한 웹 접근성(A11y) 아키텍처 설계</strong>: `inert` 속성과 Focus Trap 기반의 전역 포커스 제어 시스템을 구축하여 중첩 오버레이 환경의 포커스 오염 차단 및 스크린 리더 호환성 고도화</li>
-                <li><span class="tech-highlight">Compound Component Pattern</span> 도입으로 Dropdown, Select 등 복잡한 UI의 API 선언성을 강화하여 <strong>유연한 컴포넌트 조합 및 인터페이스 확장성 확보</strong></li>
-                <li><strong>Portal 아키텍처 설계</strong>로 Modal, Dropdown, Context-Menu 등 중첩 레이아웃 환경에서의 UI 간섭 제거 및 안정적 Overlay 시스템 구축</li>
-                <li>Controlled/Uncontrolled 하이브리드 패턴 적용으로 <strong>React Hook Form</strong> 등 다양한 외부 라이브러리와의 유연한 연동 인터페이스 제공</li>
-                <li>WAI-ARIA 표준 준수 및 키보드 네비게이션 구현으로 웹 접근성 품질 확보</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">범용 Table 설계 및 복잡한 Step-Form의 선언적 추상화</span>
-            <ul>
-                <li><strong>Table Refactoring 및 로우레벨 DOM 제어 최적화</strong>: 기존 설정 기반 구조를 Render Prop 패턴으로 전환하여 커스텀 셀 요구사항에 대응하고, 커스텀 훅을 통한 컬럼 조절 기능 구현으로 컬럼 조절 시 발생하는 Reflow 비용 최소화</li>
-                <li><strong>Advanced Generics를 통한 타입 안전성 확보</strong>: 복잡한 테이블 데이터 및 컬럼 정의 시 엄격한 타입 안전성을 보장하고, 자동 추론 환경을 구축하여 개발 단계의 오류 방지 및 유지보수 편의성 제고</li>
-                <li><strong>선언적 상태 제어 기반의 Step-Form 아키텍처 설계</strong>: 명령형 단계 제어 로직을 선언적 인터페이스로 추상화하여, 비즈니스 로직의 응집도를 높이고 복잡한 단계 전환 로직에 대한 유지보수성 및 확장성 확보</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">대규모 모노레포 전용 DX 및 품질 통제 시스템 구축</span>
-            <ul>
-                <li><strong>빌드 타임 내 실시간 피드백 및 정적 분석 환경 구축</strong>: <strong>Rspack</strong> 기반의 빌드 환경을 설계하고 정적 분석 도구를 도입하여, 대규모 모노레포 환경에서도 실시간으로 오류를 탐지할 수 있는 고속 피드백 루프 구현</li>
-                <li><strong>의존성 안정성 및 코드 품질 강제화</strong>: 린트(Lint) 규칙을 통한 순환 참조(Circular Dependency) 차단을 <strong>자동화된 검사 시스템으로 구축</strong>하여 프로젝트의 구조적 안정성 확보</li>
-                <li><strong>기술 표준화 및 유지보수 효율성 제고</strong>: 사내 <span class="tech-highlight">TanStack Query</span> 사용 패턴을 규격화하고 문서화하여 팀 전체의 코드 일관성 및 유지보수성 향상</li>
-            </ul>
-        </div>
-
-        <div class="project-group">🎮 WEMADE / WEMIX PLAY (2023.02 ~ 2025.06)</div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">Global Game Token Economy & Cross-Chain DeFi 구축</span>
-            <ul>
-                <li><strong>DEX 및 유동성 공급 서비스 개발</strong>: 수십 종의 게임 토큰 간 스왑(Swap) 및 유동성 풀(Pool) 공급 시스템 프론트엔드 아키텍처 설계</li>
-                <li><strong>환전 및 환율 변동 처리 로직 고도화</strong>: 복잡한 환전 시스템과 환율 변동 처리 코드를 관심사 분리(SoC) 기반으로 리팩토링하고 핵심 로직에 대한 단위 테스트를 작성하여 금융 데이터 처리의 안정성 강화</li>
-                <li><strong>크로스체인 브릿지(Bridge) 및 자산 이동 제어</strong>: 서로 다른 블록체인 네트워크 간의 자산 전송 지원 및 <span class="tech-highlight">데이터 정합성 검증</span></li>
-                <li><strong>다양한 토큰 생태계 확장</strong>: 팬토큰, 밈토큰 등 도메인별 특성에 맞는 토큰 서비스 기획 및 실시간 전송 정합성 확보</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">테스트/자동화 기반 안정성 강화</span>
-            <ul>
-                <li><strong>Vitest</strong> 및 <strong>MSW</strong> 도입으로 테스트 커버리지 확대 및 API 모킹 기반 시나리오 안정성 검증</li>
-                <li>Lefthook 기반 Git 이벤트 자동화로 변경 영향 파일 수정 시 테스트 자동 실행</li>
-                <li>Node.js 기반 <span class="tech-highlight">i18n 자동화 툴</span> 개발로 수동 관리 프로세스 제거 및 휴먼 에러 방지</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">DEFI 프론트엔드 성능 최적화 & UX 일관성 개선</span>
-            <ul>
-                <li><strong>Font Subset 추출 및 Woff2 포맷 변환</strong>을 통한 초기 로딩 리소스 최적화</li>
-                <li><strong>Core Web Vitals 지표 개선</strong>을 통한 사용자 체감 성능 및 검색 엔진 최적화</li>
-                <li>에러 처리 표준화: ErrorBoundary + <span class="tech-highlight">TanStack Query</span> 연동 기반 전역 에러 처리 UX 표준화</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">상태 관리 정교화 및 도메인 로직 리팩토링</span>
-            <ul>
-                <li>데이터 가공 프로세스 함수형 전환 및 SRP 기반 함수 분리로 테스트 가능 구조 정립</li>
-                <li>토큰 교환비/가격 변동 계산 로직 유틸 모듈화로 재사용성/검증 비용 절감</li>
-                <li><strong>사이드 이펙트 생명주기 최적화 및 상태 파생 로직 단일화</strong>: 복잡하게 얽힌 부수 효과 의존성을 정리하고 파생 값 계산 로직을 최적화하여 불필요한 렌더링을 최소화하고 상태 예측 가능성 증대</li>
-                <li><strong>네트워크 리소스 최적화</strong>를 위한 API 폴링 및 캐싱 전략 수립으로 불필요한 중복 호출 제거</li>
-            </ul>
-        </div>
-
-        <div class="sub-project">
-            <span class="sub-project-title">디자인 시스템 아톰/헤드리스 컴포넌트 개발</span>
-            <ul>
-                <li><strong>Storybook</strong> 기반 공용 아톰 컴포넌트 설계 및 고도화</li>
-                <li>OCP 기반 확장 구조 + <strong><span class="tech-highlight">Headless 설계</span></strong>로 다양한 스타일/UX 대응력 확보</li>
-                <li>커스텀 이미지 컴포넌트 설계(Lazy Loading) 및 컴포넌트 문서화 표준 정립으로 개발 생산성 향상</li>
-            </ul>
-        </div>
+      <h2>사용기술</h2>
+      <div class="tech-item">
+        <span class="tech-label">Core</span> Javascript, Typescript, Next.js,
+        React, Vue.js, Python, FastAPI
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Architecture</span> Micro Frontends (Module
+        Federation), FSD, Monorepo, Rspack
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Data & State</span> TanStack Query, Axios
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Testing & Qual</span> Vitest, MSW, Storybook,
+        ESLint
+      </div>
+      <div class="tech-item">
+        <span class="tech-label">Styles</span> SCSS, Tailwind CSS
+      </div>
     </section>
 
     <section>
-        <h2>사용기술</h2>
-        <div class="tech-item"><span class="tech-label">Core</span> Javascript, Typescript, Next.js, React, Vue.js</div>
-        <div class="tech-item"><span class="tech-label">Architecture</span> Micro Frontends (Module Federation), FSD, Monorepo, Rspack</div>
-        <div class="tech-item"><span class="tech-label">Data & State</span> TanStack Query, Recoil, Redux-toolkit</div>
-        <div class="tech-item"><span class="tech-label">Testing & Qual</span> Vitest, MSW, Storybook, ESLint</div>
-        <div class="tech-item"><span class="tech-label">Styles</span> SCSS, Tailwind CSS</div>
+      <h2>학력</h2>
+      <div class="edu-item">
+        <div class="edu-row">
+          <span>한국방송통신대학교 컴퓨터과학과</span>
+          <span>2022.03 ~ 2025.02</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-row">
+          <span>고려대학교 산업정보디자인과</span>
+          <span>2014.03 ~ 2021.02</span>
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>학력</h2>
-        <div class="edu-item">
-            <div class="edu-row">
-                <span>한국방송통신대학교 컴퓨터과학과</span>
-                <span>2022.03 ~ 2025.02</span>
-            </div>
-        </div>
-        <div class="edu-item">
-            <div class="edu-row">
-                <span>고려대학교 산업정보디자인과</span>
-                <span>2014.03 ~ 2021.02</span>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        Last Updated: 2026.05.16
-    </footer>
-
-</body>
+    <footer>Last Updated: 2026.06.28</footer>
+  </body>
 </html>
